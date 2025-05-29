@@ -1,0 +1,22 @@
+<ion-content *ngIf="reporte" class="detalle-content">
+  <div class="container">
+    <h2>{{ reporte.titulo }}</h2>
+    <p class="fecha">{{ reporte.fecha }}</p>
+    <ion-chip [color]="getColor(reporte.estado)">
+      {{ reporte.estado }}
+    </ion-chip>
+
+    <img
+      *ngIf="reporte.imagen"
+      [src]="reporte.imagen"
+      alt="Imagen"
+      class="imagen"
+    />
+
+    <p class="descripcion">{{ reporte.descripcion }}</p>
+
+    <ion-button expand="block" (click)="volver()">
+      Volver al menú
+    </ion-button>
+  </div>
+</ion-content>

@@ -1,0 +1,134 @@
+.register-container {
+  background-color: #eaf8ec;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-card {
+  background: #fff;
+  padding: 32px;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 430px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 24px;
+  color: #1b4332;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.input-group {
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 6px;
+  font-size: 15px;
+  color: #1b4332;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: none;
+  background-color: #e3f6e9;
+  font-size: 15px;
+  color: #222;
+  outline: none;
+  border-bottom: 2px solid transparent;
+}
+
+.input-group input.valid {
+  border-bottom: 2px solid #2f9e44;
+}
+
+.input-group input.invalid {
+  border-bottom: 2px solid #e03131;
+}
+
+.password-container {
+  position: relative;
+}
+
+.password-container input {
+  padding-right: 36px;
+}
+
+.password-container i {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 16px;
+  color: #2f9e44;
+}
+
+.register-button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 25px;
+  background-color: #2f9e44;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  border: none;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.google-button {
+  margin-top: 12px;
+  width: 100%;
+  padding: 11px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #222;
+  cursor: pointer;
+}
+
+.google-button i {
+  color: #2f9e44;
+  font-size: 18px;
+}
+
+.login-text {
+  font-size: 14px;
+  margin-top: 20px;
+  color: #444;
+}
+
+.login-link {
+  color: #2f9e44;
+  font-weight: 600;
+  margin-left: 4px;
+  cursor: pointer;
+}
+
+.error-message {
+  color: #e03131;
+  font-size: 13px;
+  margin-top: 6px;
+  margin-bottom: 10px;
+  text-align: center;
+}

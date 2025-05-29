@@ -1,0 +1,11 @@
+<div class="camera-container">
+  <video #video autoplay playsinline muted></video>
+  <canvas #canvas hidden></canvas>
+
+  <div class="overlay">
+    <p>🧠 Detectando especie...</p>
+    <strong>{{ especieDetectada }}</strong>
+  </div>
+
+  <button (click)="capturarFoto()">📸 Tomar Foto</button>
+</div>

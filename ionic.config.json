@@ -1,0 +1,7 @@
+{
+  "name": "bioscity",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

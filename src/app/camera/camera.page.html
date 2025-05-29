@@ -1,0 +1,17 @@
+<header>
+  <h1>Cámara con IA</h1>
+</header>
+
+<main>
+  <div class="camera-container">
+    <video #video autoplay playsinline muted></video>
+    <canvas #canvas hidden></canvas>
+
+    <div class="overlay">
+      <p>Especie detectada:</p>
+      <strong>{{ especieDetectada }}</strong>
+    </div>
+
+    <button (click)="capturarFoto()">📸 Tomar Foto</button>
+  </div>
+</main>

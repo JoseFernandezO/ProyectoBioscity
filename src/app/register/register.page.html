@@ -1,0 +1,57 @@
+<div class="register-container">
+  <div class="register-card">
+    <h2>Crear cuenta</h2>
+    <p class="subtitle">Bienvenido/a</p>
+
+    <form [formGroup]="registerForm" (ngSubmit)="registerWithEmail()">
+      <div class="input-group">
+        <label>Correo electrónico</label>
+        <input
+          type="email"
+          formControlName="email"
+          placeholder="Ingresa tu correo"
+          [ngClass]="{
+            'valid': registerForm.get('email')?.valid && registerForm.get('email')?.touched,
+            'invalid': registerForm.get('email')?.invalid && registerForm.get('email')?.touched
+          }"
+        />
+      </div>
+
+      <div class="input-group password-group">
+        <label>Contraseña</label>
+        <div class="password-container">
+          <input
+            [type]="showPassword ? 'text' : 'password'"
+            formControlName="password"
+            placeholder="Ingresa tu contraseña"
+            [ngClass]="{
+              'valid': registerForm.get('password')?.valid && registerForm.get('password')?.touched,
+              'invalid': registerForm.get('password')?.invalid && registerForm.get('password')?.touched
+            }"
+          />
+          <i
+            class="bi"
+            [ngClass]="showPassword ? 'bi-eye' : 'bi-eye-slash'"
+            (click)="togglePassword()"
+          ></i>
+        </div>
+      </div>
+
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+
+      <button type="submit" class="register-button" [disabled]="registerForm.invalid">REGISTRARSE</button>
+    </form>
+
+    <button class="google-button" (click)="registerWithGoogle()">
+      <i class="bi bi-google"></i>
+      <span>REGISTRARSE CON GOOGLE</span>
+    </button>
+
+    <p class="login-text">
+      ¿Ya tienes cuenta?
+      <a class="login-link" (click)="goToLogin()">Inicia sesión aquí</a>
+    </p>
+  </div>
+</div>

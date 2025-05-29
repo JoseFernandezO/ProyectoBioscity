@@ -1,0 +1,22 @@
+ion-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  --background: #eafbe7;
+  border-top: 1px solid #ccc;
+  z-index: 10;
+}
+
+ion-toolbar {
+  --background: #eafbe7;
+}
+
+ion-button {
+  font-size: 20px;
+}
+
+ion-icon {
+  font-size: 24px;
+  color: #2e7d32;
+}

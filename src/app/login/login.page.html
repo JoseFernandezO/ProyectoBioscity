@@ -1,0 +1,55 @@
+<div class="login-container">
+  <div class="login-card">
+    <h2>Inicia sesión</h2>
+    <p class="subtitle">Bienvenido de nuevo</p>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+      <div class="input-group">
+        <label>Correo electrónico</label>
+        <input
+          type="email"
+          formControlName="email"
+          placeholder="Ingresa tu correo"
+          [ngClass]="{
+            'valid': loginForm.get('email')?.valid && loginForm.get('email')?.touched,
+            'invalid': loginForm.get('email')?.invalid && loginForm.get('email')?.touched
+          }"
+        />
+      </div>
+
+      <div class="input-group">
+        <label>Contraseña</label>
+        <div class="password-container">
+          <input
+            [type]="showPassword ? 'text' : 'password'"
+            formControlName="password"
+            placeholder="Ingresa tu contraseña"
+            [ngClass]="{
+              'valid': loginForm.get('password')?.valid && loginForm.get('password')?.touched,
+              'invalid': loginForm.get('password')?.invalid && loginForm.get('password')?.touched
+            }"
+          />
+          <i
+            class="bi"
+            [ngClass]="showPassword ? 'bi-eye-slash' : 'bi-eye'"
+            (click)="togglePassword()"
+          ></i>
+        </div>
+      </div>
+
+      <p class="error-text" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+      <button type="submit" class="login-button">INICIAR SESIÓN</button>
+    </form>
+
+    <button class="google-button" (click)="loginWithGoogle()">
+      <i class="bi bi-google"></i>
+      <span>INICIAR CON GOOGLE</span>
+    </button>
+
+    <p class="register-text">
+      ¿No tienes cuenta?
+      <a (click)="goToRegister()" class="register-link">Regístrate aquí</a>
+    </p>
+  </div>
+</div>

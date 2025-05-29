@@ -1,0 +1,56 @@
+<ion-content class="home-content" [fullscreen]="true">
+  <div class="container">
+    <h2>Bienvenida, {{ userName }} 👋</h2>
+
+
+    <div *ngIf="reportes.length === 0" class="empty-message">
+      Aún no hay noticias en tu zona 🌿
+    </div>
+
+    <ion-card
+      *ngFor="let reporte of reportes"
+      [routerLink]="['/detalle', reporte.id]"
+      class="card-noticia"
+      [ngStyle]="{
+        borderLeft: '6px solid var(--ion-color-' + getColor(reporte.estado) + ')'
+      }"
+    >
+      <ion-card-header>
+        <ion-card-title>{{ reporte.titulo }}</ion-card-title>
+        <ion-card-subtitle>{{ reporte.fecha }}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-chip color="{{ getColor(reporte.estado) }}">
+        {{ reporte.estado }}
+      </ion-chip>
+    </ion-card>
+  </div>
+
+  <!-- Footer dentro del contenido para que no lo tape -->
+  <div class="bottom-nav">
+    <ion-toolbar>
+      <ion-grid>
+        <ion-row class="ion-justify-content-between ion-align-items-center">
+          <ion-col size="4" class="text-center">
+            <ion-button routerLink="/camara" fill="clear" routerLink="/home">
+              <ion-icon name="home" slot="icon-only"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col size="4" class="text-center">
+            <ion-button fill="clear">
+              <ion-icon name="camera" slot="icon-only"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col size="4" class="text-center">
+            <ion-button fill="clear">
+              <ion-icon name="map" slot="icon-only"></ion-icon>
+            </ion-button>
+
+            <ion-button (click)="abrirCamara()">📷 Abrir Cámara con IA</ion-button>
+
+
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-toolbar>
+  </div>
+</ion-content>
